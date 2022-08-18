@@ -1,19 +1,23 @@
+
 "use strict";
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-};
+const form = document.querySelector('.login-form');
 
-const buttonEl = document.querySelector('.change-color');
-const spanEl = document.querySelector('.color');
+form.addEventListener('submit', onFormSubmit);
 
-buttonEl.addEventListener('click', onButtonClick);
+function onFormSubmit(event) {
+    event.preventDefault();
 
-function onButtonClick() {
-  const randomHexColor = getRandomHexColor();
+    const formElements = event.currentTarget.elements;
+    console.log(formElements);
 
-  document.body.style.backgroundColor = randomHexColor;
-  spanEl.textContent = randomHexColor;
-};
+    const mail = formElements.email.value.trim();
+    const password = formElements.password.value.trim();
+
+    if (mail === '' || password === '') {
+        alert('All fields must be filled!');
+        return;
+    }
+    
+    form.reset();
+}
