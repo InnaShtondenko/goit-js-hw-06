@@ -8,13 +8,17 @@ function changeValue(operation) {
         counterValue  += 1;
     }
     
-    document.getElementById('value').textContent = counterValue;
+    const valueEl = document.getElementById('value');
+    valueEl.textContent = counterValue;
 }
 
-document.querySelector("[data-action=decrement]").addEventListener('click', () => {
+const decrementBtn = document.querySelector("[data-action=decrement]");
+decrementBtn.addEventListener('click', () => {
     changeValue("-");
 });
-document.querySelector("[data-action=increment]").addEventListener('click', () => {
+
+const incrementBtn = document.querySelector("[data-action=increment]");
+incrementBtn.addEventListener('click', () => {
     changeValue("+");
 });
 

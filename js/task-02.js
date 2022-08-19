@@ -15,6 +15,6 @@ const foodIngredients = ingredients.map(ingredient => {
   item.textContent = ingredient;
   item.setAttribute('class', 'item');
   
-  return item.outerHTML;
+  return item;
 });
-ulList.innerHTML += foodIngredients.join("")
+ulList.append(...foodIngredients);

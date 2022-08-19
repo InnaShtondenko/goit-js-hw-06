@@ -23,6 +23,6 @@ const imagesEl = images.map(({ url, alt }) => `
 `).join("");
 
 
-const element = document.getElementsByClassName("gallery")[0];
+const element = document.querySelector(".gallery");
 
 element.insertAdjacentHTML("afterbegin", imagesEl);

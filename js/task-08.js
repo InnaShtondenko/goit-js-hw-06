@@ -20,4 +20,5 @@ function onFormSubmit(event) {
     }
     
     form.reset();
+    console.log(formElements);
 }
